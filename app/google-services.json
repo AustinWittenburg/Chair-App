@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "315795486145",
+    "firebase_url": "https://smartchairnetwork-default-rtdb.firebaseio.com",
+    "project_id": "smartchairnetwork",
+    "storage_bucket": "smartchairnetwork.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:315795486145:android:aa72cedc90951a0cc36b40",
+        "android_client_info": {
+          "package_name": "com.example.chairapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "315795486145-965iddk7g00kfuf3h6hv97f3n02ildqg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9qVIBcMcdL4ujtVF5F3k4qySFcnehH2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "315795486145-965iddk7g00kfuf3h6hv97f3n02ildqg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
