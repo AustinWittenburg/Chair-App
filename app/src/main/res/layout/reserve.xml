@@ -7,27 +7,33 @@
 
     <TextView
         android:id="@+id/textview_first"
-        android:layout_width="47dp"
-        android:layout_height="23dp"
+        android:layout_width="57dp"
+        android:layout_height="39dp"
         android:text="@string/StartTime"
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="145dp" />
+        app:layout_constraintBottom_toTopOf="@id/textview_second"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.193"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.785" />
 
     <TextView
         android:id="@+id/textview_second"
-        android:layout_width="37dp"
-        android:layout_height="19dp"
+        android:layout_width="57dp"
+        android:layout_height="39dp"
         android:text="@string/EndTime"
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="226dp" />
+        app:layout_constraintBottom_toTopOf="@id/button_first"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.193"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.776" />
 
     <Button
         android:id="@+id/button_first"
@@ -36,21 +42,26 @@
         android:backgroundTint="@color/hawkeye_gold"
         android:text="@string/Reserve"
         android:textColor="@color/black"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="146dp"
-        tools:layout_editor_absoluteY="299dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_first"
+        app:layout_constraintVertical_bias="0.23" />
 
     <TextView
         android:id="@+id/textview_third"
-        android:layout_width="191dp"
-        android:layout_height="42dp"
+        android:layout_width="105dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="420dp"
         android:text="@string/CurrentReservations"
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="114dp"
-        tools:layout_editor_absoluteY="436dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button_first"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button"
@@ -58,6 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/select_start_time"
+
         tools:layout_editor_absoluteX="175dp"
         tools:layout_editor_absoluteY="129dp"
         tools:ignore="MissingConstraints" />
