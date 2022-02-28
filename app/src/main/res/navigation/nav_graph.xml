@@ -25,4 +25,16 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/Reserve"
+        android:name="com.example.chairapp.Reserve"
+        android:label="@string/Reserve"
+        tools:layout="@layout/reserve">
+
+        <action
+            android:id="@+id/action_Reserve_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+
+    </fragment>
 </navigation>
