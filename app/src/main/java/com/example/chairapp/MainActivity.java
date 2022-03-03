@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
@@ -15,12 +16,16 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.chairapp.databinding.ActivityMainBinding;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.util.Locale;
@@ -50,6 +55,34 @@ public class MainActivity extends AppCompatActivity {
 
         startTimeButton = findViewById(R.id.button);
         endTimeButton = findViewById(R.id.button_endTime);
+
+        setContentView(R.layout.fragment_second);
+
+        // Write a message to the database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Weight_data").child("1-setFloat"); //"Weight_data").child("1-setFloat");
+
+        //myRef.setValue(1511);
+
+        // Read from the database
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                Integer value = dataSnapshot.getValue(Integer.class);
+                System.err.println("Database Value:");
+                System.err.println(value);
+                System.err.println("End Database Value");
+                ((TextView)findViewById(R.id.db_output)).setText(String.valueOf(value));
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                System.out.print("error");
+            }
+
+
+        });
 
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
