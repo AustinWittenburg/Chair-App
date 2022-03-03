@@ -16,6 +16,12 @@
     <string name="select_start_time">Select Start Time</string>
     <string name="select_end_time">Select End Time</string>
     <string name="welcome_message">The Broken Engineers\nSmart Chair Network</string>
+    <string name="chair_page_title">Select A Chair</string>
+    <string name="chair_one">1</string>
+    <string name="chair_two">2</string>
+    <string name="chair_three">3</string>
+    <string name="chair_four">4</string>
+    <string name="chair_five">5</string>
     <string name="enter">enter</string>
     <string name="chair_reservation">Chair: Reservation:</string>
 
