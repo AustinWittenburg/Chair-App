@@ -1,6 +1,7 @@
 package com.example.chairapp;
 
 import android.app.TimePickerDialog;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -75,6 +76,17 @@ public class MainActivity extends AppCompatActivity {
                 System.err.println(value);
                 System.err.println("End Database Value");
                 ((TextView)findViewById(R.id.db_output)).setText(String.valueOf(value));
+
+                if(value > 1000){
+                    Button chair1 = findViewById(R.id.button2);
+                    chair1.setTextColor(getResources().getColor(R.color.hawkeye_gold));
+                    chair1.setBackgroundColor(getResources().getColor(R.color.black));
+                }
+                else{
+                    Button chair1 = findViewById(R.id.button2);
+                    chair1.setTextColor(getResources().getColor(R.color.black));
+                    chair1.setBackgroundColor(getResources().getColor(R.color.hawkeye_gold));
+                }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
