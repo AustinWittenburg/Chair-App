@@ -14,6 +14,14 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_Admin"
+            app:destination="@id/Admin"
+
+            />
+
+
+
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -24,6 +32,11 @@
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_Reserve"
+            app:destination="@id/Reserve" />
+
+
     </fragment>
 
     <fragment
@@ -37,4 +50,19 @@
             app:destination="@id/SecondFragment" />
 
     </fragment>
+
+    <fragment
+        android:id="@+id/Admin"
+        android:name="com.example.chairapp.Admin"
+        android:label="@string/Admin"
+        tools:layout="@layout/reserve">
+
+        <action
+            android:id="@+id/action_Admin_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+
+
+    </fragment>
+
+
 </navigation>

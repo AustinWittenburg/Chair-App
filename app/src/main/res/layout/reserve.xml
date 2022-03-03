@@ -5,38 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textview_first"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="75dp"
-        android:layout_marginEnd="60dp"
-        android:text="@string/StartTime"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textview_second"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="60dp"
-        android:text="@string/EndTime"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/button_endTime"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_first" />
-
     <Button
         android:id="@+id/button_first"
         android:layout_width="wrap_content"
@@ -64,15 +32,14 @@
         app:layout_constraintTop_toBottomOf="@+id/button_first" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_startTime"
         android:layout_width="200dp"
         android:layout_height="50dp"
-
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="96dp"
         android:onClick="popTimePicker"
         android:text="@string/select_start_time"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textview_first"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -80,12 +47,12 @@
         android:id="@+id/button_endTime"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="96dp"
         android:onClick="popTimePicker"
         android:text="@string/select_end_time"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textview_second"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button_startTime"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -93,7 +60,6 @@
         android:layout_width="319dp"
         android:layout_height="0dp"
         android:background="#808080"
-        android:text="@string/chair_reservation"
         android:textAllCaps="true"
         android:textColor="#263238"
         android:textStyle="bold"

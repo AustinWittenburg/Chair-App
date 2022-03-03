@@ -18,5 +18,8 @@
     <string name="welcome_message">The Broken Engineers\nSmart Chair Network</string>
     <string name="enter">enter</string>
     <string name="chair_reservation">Chair: Reservation:</string>
+    <string name="Admin">Admin</string>
+    <string name="add_chair">Add Chair</string>
+    <string name="enterAdmin">Admin Login</string>
 
 </resources>
