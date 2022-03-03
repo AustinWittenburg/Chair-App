@@ -8,6 +8,7 @@ import android.app.TimePickerDialog;
 import android.os.Bundle;
 
 import com.example.chairapp.databinding.FragmentFirstBinding;
+import com.example.chairapp.databinding.ReserveBinding;
 import com.google.android.material.snackbar.Snackbar;
 
 import android.view.LayoutInflater;
@@ -28,13 +29,11 @@ import android.widget.Button;
 import android.widget.TimePicker;
 
 import java.util.Locale;
+//import com.example.chairapp.databinding.FragmentReserveBinding;
 
 public class Reserve extends Fragment {
-    Button startTimeButton;
-    Button endTimeButton;
-    int start_hour, start_minute,end_hour, end_minute;
 
-    private FragmentFirstBinding binding;
+    private ReserveBinding binding;
 
     @Override
     public View onCreateView(
@@ -42,7 +41,7 @@ public class Reserve extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        binding = ReserveBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -54,7 +53,7 @@ public class Reserve extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(Reserve.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                        .navigate(R.id.action_Reserve_to_SecondFragment);
             }
         });
     }

@@ -1,5 +1,6 @@
 package com.example.chairapp;
 
+import android.app.AlertDialog;
 import android.app.TimePickerDialog;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.Log;
 import android.view.View;
 
 import androidx.navigation.NavController;
@@ -29,10 +31,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import java.text.DateFormat;
+import java.util.Calendar;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "";
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
@@ -54,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-        startTimeButton = findViewById(R.id.button);
+        startTimeButton = findViewById(R.id.button_startTime);
         endTimeButton = findViewById(R.id.button_endTime);
 
         setContentView(R.layout.fragment_second);
@@ -147,12 +152,17 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        // setting style to digital on the time picker
+        int style = AlertDialog.THEME_HOLO_DARK;
 
+        // time select for the start time on reserve page
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, style, onTimeSetListener,start_hour, start_minute,false);
+        // time select for the end time on reserve page
+        TimePickerDialog endTimePickerDialog = new TimePickerDialog(this, style, onTimeSetListener,end_hour,end_minute,false);
 
-        TimePickerDialog timePickerDialog = new TimePickerDialog(this, onTimeSetListener,start_hour, start_minute,false);
-        TimePickerDialog endTimePickerDialog = new TimePickerDialog(this, onTimeSetListener,end_hour,end_minute,false);
         endTimePickerDialog.setTitle("Select End Time");
         endTimePickerDialog.show();
+
         timePickerDialog.setTitle("Select Start Time");
         timePickerDialog.show();
     }
