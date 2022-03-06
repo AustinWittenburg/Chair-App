@@ -31,8 +31,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
-import java.text.DateFormat;
-import java.util.Calendar;
+
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -97,8 +96,6 @@ public class MainActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 System.out.print("error");
             }
-
-
         });
 
         binding.fab.setOnClickListener(new View.OnClickListener() {
@@ -128,7 +125,6 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -139,17 +135,15 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
+// setting the time using the popTimePicker which will set a start and end time for on the reserve page
     public void popTimePicker(View view){
-        TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
-            @Override
-            public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                start_hour = selectedHour;
-                start_minute= selectedMinute;
-                end_hour = selectedHour;
-                end_minute = selectedMinute;
-                startTimeButton.setText(String.format(Locale.getDefault(), "%02d:%02d", start_hour, start_minute));
-                endTimeButton.setText(String.format(Locale.getDefault(),"%02d:%02d", end_hour, end_minute));
-            }
+        TimePickerDialog.OnTimeSetListener onTimeSetListener = (timePicker, selectedHour, selectedMinute) -> {
+            start_hour = selectedHour;
+            start_minute= selectedMinute;
+            end_hour = selectedHour;
+            end_minute = selectedMinute;
+            startTimeButton.setText(String.format(Locale.getDefault(), "%02d:%02d", start_hour, start_minute));
+            endTimeButton.setText(String.format(Locale.getDefault(),"%02d:%02d", end_hour, end_minute));
         };
 
         // setting style to digital on the time picker
@@ -160,10 +154,11 @@ public class MainActivity extends AppCompatActivity {
         // time select for the end time on reserve page
         TimePickerDialog endTimePickerDialog = new TimePickerDialog(this, style, onTimeSetListener,end_hour,end_minute,false);
 
+        timePickerDialog.setTitle("Select Start Time");
+        timePickerDialog.show();
+
         endTimePickerDialog.setTitle("Select End Time");
         endTimePickerDialog.show();
 
-        timePickerDialog.setTitle("Select Start Time");
-        timePickerDialog.show();
     }
 }

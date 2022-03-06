@@ -27,5 +27,11 @@
     <string name="Admin">Admin</string>
     <string name="add_chair">Add Chair</string>
     <string name="enterAdmin">Admin Login</string>
+    <string name="find_a_chair">Find a Chair</string>
+    <string name="home">Home</string>
+    <string name="textview">TextView</string>
+    <string name="get_value">Get Value</string>
+    <string name="weight">Weight</string>
+    <string name="nothing" />
 
 </resources>

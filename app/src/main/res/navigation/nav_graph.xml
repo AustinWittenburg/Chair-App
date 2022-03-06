@@ -10,25 +10,17 @@
         android:name="com.example.chairapp.FirstFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
-
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
-        <action
-            android:id="@+id/action_FirstFragment_to_Admin"
-            app:destination="@id/Admin"
-
-            />
-
-
-
     </fragment>
+
+
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.chairapp.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
-
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
@@ -36,8 +28,8 @@
             android:id="@+id/action_SecondFragment_to_Reserve"
             app:destination="@id/Reserve" />
 
-
     </fragment>
+
 
     <fragment
         android:id="@+id/Reserve"
@@ -51,18 +43,7 @@
 
     </fragment>
 
-    <fragment
-        android:id="@+id/Admin"
-        android:name="com.example.chairapp.Admin"
-        android:label="@string/Admin"
-        tools:layout="@layout/reserve">
 
-        <action
-            android:id="@+id/action_Admin_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-
-
-    </fragment>
 
 
 </navigation>
