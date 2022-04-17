@@ -1,8 +1,7 @@
-package com.example.chairapp;
+package com.chairnetwork.chairapp;
 
 import android.app.AlertDialog;
 import android.app.TimePickerDialog;
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -10,7 +9,6 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.util.Log;
 import android.view.View;
 
 import androidx.navigation.NavController;
@@ -18,7 +16,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.chairapp.databinding.ActivityMainBinding;
+import com.chairnetwork.chairapp.databinding.ActivityMainBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,7 +27,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.TimePicker;
 
 
 import java.util.Locale;

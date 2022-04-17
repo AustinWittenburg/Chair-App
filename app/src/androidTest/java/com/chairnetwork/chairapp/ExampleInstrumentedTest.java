@@ -1,4 +1,4 @@
-package com.example.chairapp;
+package com.chairnetwork.chairapp;
 
 import android.content.Context;
 

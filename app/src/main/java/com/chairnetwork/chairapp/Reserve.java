@@ -1,21 +1,25 @@
-package com.example.chairapp;
-
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+package com.chairnetwork.chairapp;
 
 import androidx.annotation.NonNull;
+
+import android.os.Bundle;
+
+import com.chairnetwork.chairapp.databinding.FragmentFirstBinding;
+import com.chairnetwork.chairapp.databinding.ReserveBinding;
+
+import android.view.LayoutInflater;
+import android.view.View;
+
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 
+import android.view.ViewGroup;
+//import com.example.chairapp.databinding.FragmentReserveBinding;
 
-import com.example.chairapp.databinding.FragmentFirstBinding;
+public class Reserve extends Fragment {
 
-public class FirstFragment extends Fragment {
-
-    private FragmentFirstBinding binding;
+    private ReserveBinding binding;
 
     @Override
     public View onCreateView(
@@ -23,7 +27,7 @@ public class FirstFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        binding = ReserveBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -34,8 +38,8 @@ public class FirstFragment extends Fragment {
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                NavHostFragment.findNavController(Reserve.this)
+                        .navigate(R.id.action_Reserve_to_SecondFragment);
             }
         });
     }
@@ -45,5 +49,10 @@ public class FirstFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
+
+
+
+
 
 }
