@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         startTimeButton = findViewById(R.id.button_startTime);
         endTimeButton = findViewById(R.id.button_endTime);
 
-        setContentView(R.layout.fragment_second);
+        //setContentView(R.layout.fragment_second);
 
         // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -67,33 +67,7 @@ public class MainActivity extends AppCompatActivity {
         //myRef.setValue(1511);
 
         // Read from the database
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                Integer value = dataSnapshot.getValue(Integer.class);
-                System.err.println("Database Value:");
-                System.err.println(value);
-                System.err.println("End Database Value");
-                ((TextView)findViewById(R.id.db_output)).setText(String.valueOf(value));
 
-                if(value > 1000){
-                    Button chair1 = findViewById(R.id.button2);
-                    chair1.setTextColor(getResources().getColor(R.color.hawkeye_gold));
-                    chair1.setBackgroundColor(getResources().getColor(R.color.black));
-                }
-                else{
-                    Button chair1 = findViewById(R.id.button2);
-                    chair1.setTextColor(getResources().getColor(R.color.black));
-                    chair1.setBackgroundColor(getResources().getColor(R.color.hawkeye_gold));
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                System.out.print("error");
-            }
-        });
 
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
