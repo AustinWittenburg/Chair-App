@@ -31,7 +31,10 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SecondFragment.SecondFragmentListener, Reserve.ReserveListener{
+
+    private SecondFragment secondFragment;
+    private Reserve reserve;
 
     private static final String TAG = "";
     private AppBarConfiguration appBarConfiguration;
@@ -48,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        reserve = new Reserve();
 
         setSupportActionBar(binding.toolbar);
 
@@ -76,6 +81,16 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    @Override
+    public void onButtonPressed(String chair) {
+        reserve.whichChair(chair);
+    }
+
+    @Override
+    public void afterButtonPressed(String chair) {
+        System.err.print(chair + "!!!");
     }
 
     @Override
