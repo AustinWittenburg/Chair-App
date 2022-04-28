@@ -2,6 +2,7 @@ package com.chairnetwork.chairapp;
 
 import androidx.annotation.NonNull;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import com.chairnetwork.chairapp.databinding.FragmentFirstBinding;
@@ -20,6 +21,15 @@ import android.view.ViewGroup;
 public class Reserve extends Fragment {
 
     private ReserveBinding binding;
+    private ReserveListener listener;
+
+    public interface ReserveListener {
+        void afterButtonPressed(String chair);
+    }
+
+    public void whichChair(String chairNum){
+        System.err.println(chairNum);
+    }
 
     @Override
     public View onCreateView(
@@ -42,6 +52,22 @@ public class Reserve extends Fragment {
                         .navigate(R.id.action_Reserve_to_SecondFragment);
             }
         });
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof ReserveListener) {
+            listener = (ReserveListener) context;
+        } else {
+            throw new RuntimeException(context.toString() + " must implement ReserveListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
     }
 
     @Override
