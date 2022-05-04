@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.lang.Math;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -75,7 +77,7 @@ public class SecondFragment extends Fragment {
                 System.err.println("End Database Value");
                 ((TextView)getView().findViewById(R.id.db_output)).setText(String.valueOf(value));
 
-                if(value > 1000){
+                if(Math.abs(value) > 800){
                     Button chair1 = getView().findViewById(R.id.button2);
                     chair1.setTextColor(getResources().getColor(R.color.hawkeye_gold));
                     chair1.setBackgroundColor(getResources().getColor(R.color.black));
@@ -105,7 +107,7 @@ public class SecondFragment extends Fragment {
                 System.err.println("End Database Value");
                 ((TextView)getView().findViewById(R.id.db_output)).setText(String.valueOf(value));
 
-                if(value > 1000){
+                if(Math.abs(value) > 800){
                     Button chair1 = getView().findViewById(R.id.button4);
                     chair1.setTextColor(getResources().getColor(R.color.hawkeye_gold));
                     chair1.setBackgroundColor(getResources().getColor(R.color.black));
@@ -135,7 +137,7 @@ public class SecondFragment extends Fragment {
                 System.err.println("End Database Value");
                 ((TextView)getView().findViewById(R.id.db_output)).setText(String.valueOf(value));
 
-                if(value > 1000){
+                if(Math.abs(value) > 800){
                     Button chair1 = getView().findViewById(R.id.button5);
                     chair1.setTextColor(getResources().getColor(R.color.hawkeye_gold));
                     chair1.setBackgroundColor(getResources().getColor(R.color.black));
@@ -165,7 +167,7 @@ public class SecondFragment extends Fragment {
                 System.err.println("End Database Value");
                 ((TextView)getView().findViewById(R.id.db_output)).setText(String.valueOf(value));
 
-                if(value > 1000){
+                if(Math.abs(value) > 800){
                     Button chair1 = getView().findViewById(R.id.button6);
                     chair1.setTextColor(getResources().getColor(R.color.hawkeye_gold));
                     chair1.setBackgroundColor(getResources().getColor(R.color.black));
@@ -195,7 +197,7 @@ public class SecondFragment extends Fragment {
                 System.err.println("End Database Value");
                 ((TextView)getView().findViewById(R.id.db_output)).setText(String.valueOf(value));
 
-                if(value > 1000){
+                if(Math.abs(value) > 800){
                     Button chair1 = getView().findViewById(R.id.button7);
                     chair1.setTextColor(getResources().getColor(R.color.hawkeye_gold));
                     chair1.setBackgroundColor(getResources().getColor(R.color.black));
@@ -225,7 +227,7 @@ public class SecondFragment extends Fragment {
         binding.button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onButtonPressed("Chair 3");
+                listener.onButtonPressed("chair3");
                 NavHostFragment.findNavController(SecondFragment.this)
                         .navigate(R.id.action_SecondFragment_to_Reserve);
             }
@@ -233,7 +235,7 @@ public class SecondFragment extends Fragment {
         binding.button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onButtonPressed("Chair 5");
+                listener.onButtonPressed("chair5");
                 NavHostFragment.findNavController(SecondFragment.this)
                         .navigate(R.id.action_SecondFragment_to_Reserve);
             }
@@ -241,7 +243,7 @@ public class SecondFragment extends Fragment {
         binding.button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onButtonPressed("Chair 4");
+                listener.onButtonPressed("chair4");
                 NavHostFragment.findNavController(SecondFragment.this)
                         .navigate(R.id.action_SecondFragment_to_Reserve);
             }
@@ -249,7 +251,7 @@ public class SecondFragment extends Fragment {
         binding.button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onButtonPressed("Chair 1");
+                listener.onButtonPressed("chair1");
                 NavHostFragment.findNavController(SecondFragment.this)
                         .navigate(R.id.action_SecondFragment_to_Reserve);
             }
@@ -257,7 +259,7 @@ public class SecondFragment extends Fragment {
         binding.button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onButtonPressed("Chair 2");
+                listener.onButtonPressed("chair2");
                 NavHostFragment.findNavController(SecondFragment.this)
                         .navigate(R.id.action_SecondFragment_to_Reserve);
             }
