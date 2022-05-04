@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements SecondFragment.Se
     private static final String TAG = "";
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    public String chairNum;
 
     Button startTimeButton;
     Button endTimeButton;
@@ -59,9 +60,6 @@ public class MainActivity extends AppCompatActivity implements SecondFragment.Se
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
-        startTimeButton = findViewById(R.id.button_startTime);
-        endTimeButton = findViewById(R.id.button_endTime);
 
         //setContentView(R.layout.fragment_second);
 
@@ -85,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements SecondFragment.Se
 
     @Override
     public void onButtonPressed(String chair) {
-        reserve.whichChair(chair);
+        chairNum = chair;
     }
 
     @Override
@@ -123,12 +121,36 @@ public class MainActivity extends AppCompatActivity implements SecondFragment.Se
 
 // setting the time using the popTimePicker which will set a start and end time for on the reserve page
     public void popTimePicker(View view){
+        startTimeButton = findViewById(R.id.button_startTime);
         TimePickerDialog.OnTimeSetListener onTimeSetListener = (timePicker, selectedHour, selectedMinute) -> {
             start_hour = selectedHour;
             start_minute= selectedMinute;
+            startTimeButton.setText(String.format(Locale.getDefault(), "%02d:%02d", start_hour, start_minute));
+        };
+
+        // setting style to digital on the time picker
+        int style = AlertDialog.THEME_HOLO_DARK;
+
+        // time select for the start time on reserve page
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, style, onTimeSetListener,start_hour, start_minute,false);
+        // time select for the end time on reserve page
+        TimePickerDialog endTimePickerDialog = new TimePickerDialog(this, style, onTimeSetListener,end_hour,end_minute,false);
+
+
+        timePickerDialog.setTitle("Select Start Time");
+        timePickerDialog.show();
+
+
+
+    }
+
+    // setting the time using the popTimePicker which will set a start and end time for on the reserve page
+    public void popTimePicker2(View view){
+        endTimeButton = findViewById(R.id.button_endTime);
+        TimePickerDialog.OnTimeSetListener onTimeSetListener = (timePicker, selectedHour, selectedMinute) -> {
+
             end_hour = selectedHour;
             end_minute = selectedMinute;
-            startTimeButton.setText(String.format(Locale.getDefault(), "%02d:%02d", start_hour, start_minute));
             endTimeButton.setText(String.format(Locale.getDefault(),"%02d:%02d", end_hour, end_minute));
         };
 
@@ -140,11 +162,10 @@ public class MainActivity extends AppCompatActivity implements SecondFragment.Se
         // time select for the end time on reserve page
         TimePickerDialog endTimePickerDialog = new TimePickerDialog(this, style, onTimeSetListener,end_hour,end_minute,false);
 
-        timePickerDialog.setTitle("Select Start Time");
-        timePickerDialog.show();
-
         endTimePickerDialog.setTitle("Select End Time");
         endTimePickerDialog.show();
+
+
 
     }
 }
