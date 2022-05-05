@@ -75,7 +75,7 @@ public class SecondFragment extends Fragment {
                 System.err.println("Database Value:");
                 System.err.println(value);
                 System.err.println("End Database Value");
-                ((TextView)getView().findViewById(R.id.db_output)).setText(String.valueOf(value));
+                //((TextView)getView().findViewById(R.id.db_output)).setText(String.valueOf(value));
 
                 if(Math.abs(value) > 800){
                     Button chair1 = getView().findViewById(R.id.button2);
@@ -105,7 +105,7 @@ public class SecondFragment extends Fragment {
                 System.err.println("Database Value:");
                 System.err.println(value);
                 System.err.println("End Database Value");
-                ((TextView)getView().findViewById(R.id.db_output)).setText(String.valueOf(value));
+                //((TextView)getView().findViewById(R.id.db_output)).setText(String.valueOf(value));
 
                 if(Math.abs(value) > 800){
                     Button chair1 = getView().findViewById(R.id.button4);
@@ -135,7 +135,7 @@ public class SecondFragment extends Fragment {
                 System.err.println("Database Value:");
                 System.err.println(value);
                 System.err.println("End Database Value");
-                ((TextView)getView().findViewById(R.id.db_output)).setText(String.valueOf(value));
+                //((TextView)getView().findViewById(R.id.db_output)).setText(String.valueOf(value));
 
                 if(Math.abs(value) > 800){
                     Button chair1 = getView().findViewById(R.id.button5);
@@ -165,7 +165,7 @@ public class SecondFragment extends Fragment {
                 System.err.println("Database Value:");
                 System.err.println(value);
                 System.err.println("End Database Value");
-                ((TextView)getView().findViewById(R.id.db_output)).setText(String.valueOf(value));
+                //((TextView)getView().findViewById(R.id.db_output)).setText(String.valueOf(value));
 
                 if(Math.abs(value) > 800){
                     Button chair1 = getView().findViewById(R.id.button6);
@@ -195,7 +195,7 @@ public class SecondFragment extends Fragment {
                 System.err.println("Database Value:");
                 System.err.println(value);
                 System.err.println("End Database Value");
-                ((TextView)getView().findViewById(R.id.db_output)).setText(String.valueOf(value));
+                //((TextView)getView().findViewById(R.id.db_output)).setText(String.valueOf(value));
 
                 if(Math.abs(value) > 800){
                     Button chair1 = getView().findViewById(R.id.button7);
