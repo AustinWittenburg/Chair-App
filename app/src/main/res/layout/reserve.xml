@@ -61,7 +61,6 @@
         android:layout_width="319dp"
         android:layout_height="0dp"
         android:background="#808080"
-        android:text="11:00am-1:00pm \n 2:00pm-3:00pm"
         android:textAllCaps="true"
         android:textColor="#263238"
         android:textStyle="bold"
