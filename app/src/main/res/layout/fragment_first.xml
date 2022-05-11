@@ -31,15 +31,4 @@
         app:layout_constraintTop_toBottomOf="@id/textview_first" />
 
 
-    <TextView
-        android:id="@+id/dbText"
-        android:layout_width="86dp"
-        android:layout_height="35dp"
-        android:text="@string/weight"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
