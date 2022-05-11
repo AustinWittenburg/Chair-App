@@ -107,7 +107,7 @@ public class SecondFragment extends Fragment {
                 System.err.println("End Database Value");
                 //((TextView)getView().findViewById(R.id.db_output)).setText(String.valueOf(value));
 
-                if(Math.abs(value) > 800){
+                if(Math.abs(value) > 3000){
                     Button chair1 = getView().findViewById(R.id.button4);
                     chair1.setTextColor(getResources().getColor(R.color.hawkeye_gold));
                     chair1.setBackgroundColor(getResources().getColor(R.color.black));
@@ -137,7 +137,7 @@ public class SecondFragment extends Fragment {
                 System.err.println("End Database Value");
                 //((TextView)getView().findViewById(R.id.db_output)).setText(String.valueOf(value));
 
-                if(Math.abs(value) > 800){
+                if(Math.abs(value) > 1000){
                     Button chair1 = getView().findViewById(R.id.button5);
                     chair1.setTextColor(getResources().getColor(R.color.hawkeye_gold));
                     chair1.setBackgroundColor(getResources().getColor(R.color.black));
@@ -167,7 +167,7 @@ public class SecondFragment extends Fragment {
                 System.err.println("End Database Value");
                 //((TextView)getView().findViewById(R.id.db_output)).setText(String.valueOf(value));
 
-                if(Math.abs(value) > 800){
+                if(Math.abs(value) > 4000){
                     Button chair1 = getView().findViewById(R.id.button6);
                     chair1.setTextColor(getResources().getColor(R.color.hawkeye_gold));
                     chair1.setBackgroundColor(getResources().getColor(R.color.black));
