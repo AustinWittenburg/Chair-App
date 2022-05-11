@@ -117,10 +117,4 @@ public class Reserve extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
-
-
-
-
-
 }

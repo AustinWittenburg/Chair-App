@@ -55,11 +55,11 @@ public class MainActivity extends AppCompatActivity implements SecondFragment.Se
 
         reserve = new Reserve();
 
-        setSupportActionBar(binding.toolbar);
+        //setSupportActionBar(binding.toolbar);
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        //NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
         //setContentView(R.layout.fragment_second);
 
@@ -164,8 +164,6 @@ public class MainActivity extends AppCompatActivity implements SecondFragment.Se
 
         endTimePickerDialog.setTitle("Select End Time");
         endTimePickerDialog.show();
-
-
 
     }
 }
